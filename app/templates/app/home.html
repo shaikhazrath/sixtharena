@@ -1,0 +1,137 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/home.css' %}">
+{% endblock css %}
+{% block title %}Home{% endblock title %}
+{% block main-content %}
+<div class="home-container">
+  <div class="hero-container">
+    <div class="h-text-c">
+      <h1 class="h-text">
+        Bring <br> the Hype
+      </h1>
+      <h3 class="sub">Unleash your fashion</h3>
+    </div>
+    <div class="h-img-c">
+      <img src="../../static/app/images/banner/shoes.png" alt="" class="h-img" id="b-imgs">
+
+    </div>
+  </div>
+  <div class="hero-offer-notification">
+    <div class="offer-notification-cont">
+      <p class="notification-title " id='nt'><small style="font-size:14px; margin-right: 10px;">Sixtharena * * </small>
+        Sale is
+        <span class="key">Live</span> now !!!
+        <small style="font-size:14px; margin-left: 10px;"> * * Sixtharena</small>
+      </p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div class="filter">
+    <div class="isec selected">Shirts</div>
+    <div class="isec ">Shoes</div>
+    <div class="isec ">watch</div>
+
+  </div>
+
+  <div  class="sec prod " id="Shirts">
+    <p class="sec-title"> Shirts </p>
+    <div class="home-products">
+      {% for t in topwear %}
+      <div class="card">
+        <a href="{% url 'product-detail' t.id %}" class="product-img">
+          <img src="{{t.product_image.url}}" class="card-img-top skeleton" alt="...">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">{{t.title}}</h5>
+          <p class="card-text">₹ {{t.selling_price}}/-</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div  class="sec prod hide" id="Shoes">
+    <p class="sec-title"> Shoes </p>
+    <div class="home-products">
+      {% for t in shoes %}
+      <div class="card">
+        <a href="{% url 'product-detail' t.id %}" class="product-img">
+          <img src="{{t.product_image.url}}" class="card-img-top skeleton" alt="...">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">{{t.title}}</h5>
+          <p class="card-text">₹ {{t.selling_price}}/-</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+ 
+
+  <div  class="sec prod hide" id="watch">
+    <p class="sec-title"> watch </p>
+    <div class="home-products">
+      {% for t in watch %}
+      <div class="card">
+        <a href="{% url 'product-detail' t.id %}" class="product-img">
+          <img src="{{t.product_image.url}}" class="card-img-top skeleton" alt="...">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">{{t.title}}</h5>
+          <p class="card-text">₹ {{t.selling_price}}/-</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+<hr>
+<script>
+
+  const img  = document.getElementById('b-imgs')
+  const imgs = ['../../static/app/images/banner/shoes.png','../../static/app/images/banner/LouisVuitton_Br_WallArt_1024x1024.jpg','../../static/app/images/banner/rolex-first-time-dr-eight-love.jpg']
+  setInterval(function(){
+    const random = Math.floor(Math.random() * 3);
+    img.src = imgs[random]
+  },1000)
+
+
+
+
+
+const allopts = document.querySelectorAll('.isec') || [];
+const allsecs = document.querySelectorAll('.prod') || [];
+allopts.forEach((opt) => {
+    opt.addEventListener('click', () => {
+        allopts.forEach((ot) => ot.classList.remove('selected'));
+        allsecs.forEach((s) => {
+            s.classList.add('hide')
+            if(opt.textContent === s.id){
+                s.classList.remove('hide')
+            }
+        });
+        opt.classList.add("selected");
+    })
+})
+const filter = document.getElementsByClassName('filter')[0] || "";
+let dist = filter.getBoundingClientRect().top;
+document.addEventListener('scroll', () => {
+    if(window.scrollY >= dist){
+        filter.style.position = "fixed";
+    }else{
+        filter.style.position = "unset";   
+    }
+})
+</script>
+{% endblock main-content %}

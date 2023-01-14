@@ -1,0 +1,56 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/orders.css' %}">{% endblock css %}
+{% block title %}Buy Now{% endblock title %}
+{% block main-content %}
+<div class="o-container">
+  <div class="crow">
+    <p class='o-title'>My Orders</p>
+    {% for op in order_placed %}
+    <div class="row2">
+      <div class="details-1">
+        <div class="o-box">
+          <p class="o-box-title">Ordered Date</p>
+          <p class="o-text">{{op.ordered_date}}</p>
+        </div>
+        <div class="o-box">
+          <p class="o-box-title">Total</p>
+          <p class="o-text">{{op.total_cost}}</p>
+        </div>
+        <div class="o-box">
+          <p class="o-box-title">Product Id</p>
+          <p class="o-text">{{op.product.id}}</p>
+        </div>
+      </div>
+      <div class="details-2">
+        <div class="o-img-cont">
+          <img src="{{op.product.product_image.url}}" alt=''  class="o-img">
+        </div>
+        <div class="o-details">
+          <p class="o-p-name">{{op.product.title}}</p>
+          <p class="o-p-quan">by Sixtherina</p>
+          <p class="o-p-quan">quantity: {{op.quantity}}</p>
+        </div>
+        <div class="o-status">
+          <p class="o-d-status">{{op.status}}</p>
+          <a href="{% url 'order-delete' op.id %}" class="btn btn-danger" id="delete">cancel</a>
+        </div>
+      </div>
+    </div>
+
+<script>
+      const atag = document.getElementById('delete');
+      const status = '{{op.status}}'
+      if(status == "delever"  || status == "On the Way" || status == "Deliverd" ){
+        atag.remove();
+      }
+   </script>
+    {% endfor %}
+  <p style="color:rgb(214, 175, 0) ;"> !! after status change from packing to - on the way you cant cancel order !!</p>
+
+  </div>
+ 
+</div>
+{% endblock main-content %}

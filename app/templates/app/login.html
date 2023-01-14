@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'app/css/logiN.css' %}">{% endblock css %}
+
+{% block title %}Login{% endblock title %}
+{% block main-content %}
+<div class="auth-container">
+  <p class="auth-title">~ Login ~</p>
+  <form action="" method="post">
+    {% csrf_token %}
+    {% for fm in form %}
+    {{fm.label_tag}}
+    {{fm}}
+    {{fm.errors | striptags}}
+    {% endfor %}
+    <input class='auth-btn' type="submit" value="Login">
+    <div class="auth-extrabtn">
+      <a href="{% url 'password_reset'  %}">Forgot Password?</a>
+    </div>
+    <div class="auth-extrabtn">
+      New User ?
+      <a href="{% url 'customerregistration'  %}">create new account</a>
+    </div>
+    {% if form.non_field_errors %}
+    <div class="err">
+      {% for error in form.non_field_errors %}
+      {{error}}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </form>
+</div>
+{% endblock main-content %}

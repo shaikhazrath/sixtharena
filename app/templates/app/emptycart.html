@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{%  block css %}
+<link rel="stylesheet" href="{% static 'app/css/cart.css' %}">{% endblock css %}
+
+{% block title %}empty-cart{% endblock title %}
+{% block main-content %}
+
+<div class="Ecart-cont">
+    <p class="c-title">Your Cart is Empty!!</p>
+    <a href="{% url 'home' %}" class="c-btn">Go shop now</a>
+</div>
+
+{% endblock main-content %}s

@@ -1,0 +1,158 @@
+.chkout-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+    font-family: 'Poppins';
+    background: #f8f8f8;
+}
+.rrow{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.ccol-2{
+    padding: 10px 25px;
+}
+.ccol-2 .a-title{
+    font-size: 20px;
+    text-transform: capitalize;
+    padding-left: 10px;
+}
+.a-card{
+    width: 90%;
+    height: max-content;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    background: white;
+    border-radius: 6px;
+    /* box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px; */
+    font-family: 'DM Sans';
+
+}
+.form-check-label{
+    color: rgb(27, 24, 24);
+}
+.form-check-input:checked ~ .form-check-label{
+    color: black;
+}
+.a-card .a-name, .a-add{
+    text-transform: capitalize;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-size: 17px;
+}
+.a-card .a-add{
+    font-size: 14px;
+}
+.text-end{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 40px;
+    right: 60px;
+}
+.c-order-btn{
+    width: 160px;
+    height: 40px;
+    background: #00df81;
+    color: white;
+    font-family: 'Poppins';
+    border: none;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius:6px;
+    
+}
+.fw-bold{
+    margin: 0 10px;
+    font-family: 'DM Sans';
+    font-size: 13px;
+    text-transform: capitalize;
+    color: rgb(163, 148, 148);
+}
+.fw-bold .t-amount{
+    color: black;
+    font-size: 17px;
+    margin-left:5px;
+    font-family: 'Poppins';
+}
+.ccol{
+    padding: 5px 30px;
+}
+.card-1{
+    padding: 0 10px;
+    margin: 15px 0;
+}
+.a-title-2{
+    font-size:21px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    width: max-content;
+}
+tr{
+    border: none;
+    outline: none;
+}
+.table{
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+
+th{
+    font-size: 16px;
+}
+
+td{
+    color: black;
+    font-size: 16px;
+    height: 50px;
+}
+.table > :not(caption) > * > *{
+}
+.Tc{
+    width:min-content;
+    text-align: justify;
+    color: rgb(141, 129, 129);
+    margin:15px 0 ;
+    padding-bottom: 0;
+    margin-top: 40px;
+    font-size: 13px;
+    font-family: 'DM Sans';
+}
+.tc-head{
+    font-family: 'Poppins';
+    color: rgb(109, 97, 97);
+    font-size: 14px;
+}
+
+@media only screen and (max-width:893px){
+    .rrow {
+        grid-template-rows: 0fr 0fr;
+        grid-template-columns: none;
+    }
+    .ccol-2 {
+        grid-row: 1;
+    }
+    .ccol{
+        grid-row: 2;
+    }
+    .text-end {
+        right: 0px;
+        width: 100%;
+        background: #f0f0f0;
+        padding: 10px 25px;
+    }
+    .chkout-container {
+        padding: 70px 0;
+    }
+    th, td {
+        font-size: 13px;
+    }
+    td{
+        font-size: 14px;
+    }
+}

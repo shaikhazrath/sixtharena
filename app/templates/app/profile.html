@@ -1,0 +1,61 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block css %} <link rel="stylesheet" href="{% static 'app/css/profile.css' %}">{% endblock css %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block main-content %}
+<div class="profile-cont">
+  <div class="profile-form">
+    <h1>profile</h1>
+    <form action=" " style="display: flex; flex-direction: column;" method="post">
+      {% csrf_token %}
+      {% for fm in form %}
+      {{fm.label_tag}}
+      {{fm}}
+      {{fm.errors | striptags}}
+      {% endfor %}
+      <button class="profile-btn" type='submit'>submit</button>
+    </form>
+  </div>
+
+    {% for ad in add %}
+   <div style="padding: 10px;">
+
+        <form action=" " method="post">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">name : {{ad.name}}</h5>
+                  <p class="card-text">locality : {{ad.locality}} , city : {{ad.city}} , state : {{ad.state}} , zipcode : {{ad.zipcode}} , phoneNumber : {{ad.phoneNumber}}</p>
+                  <a href="{% url 'customer-delete' ad.id %}" class="btn btn-danger">delete</a>
+                </div>
+              </div>
+            </div>
+        </form>
+   </div>
+
+    {% endfor %}
+
+    <div class="logout" style="margin: 10px; ;">
+      <a href="{% url 'logout' %}" class="logout-btn" style="margin: 5px;">Logout</a>
+
+      <a class="logout-btn" href="{% url 'passwordchange' %}" style="margin: 5px;">Changepassword</a>
+
+
+    </div>
+  </div>
+</div>
+{% if messages %}
+{% for message in messages %}
+<div class="msg-cont" id='msg-cont'>
+  <ion-icon name="checkmark-circle-outline" class="ico-ti"></ion-icon>
+  <p class="message-text" id='msg'>
+    {{message}}
+  </p>
+</div>
+{% endfor %}
+{% endif %}
+{% endblock main-content %}

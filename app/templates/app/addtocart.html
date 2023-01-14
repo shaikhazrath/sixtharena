@@ -1,0 +1,81 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'app/css/cart.css' %}">{% endblock css %}
+{% block title %}add-to-cart{% endblock title %}
+{% block main-content %}
+
+
+<div class="cart-total-items">
+  <h1 class="title-c">Cart Items</h1>
+  <div class="cart-items">
+    {% for cart in carts %}
+    <div class="item-container">
+ 
+      <div class='cart-item'>
+        <div class="img-cont">
+          <img src="{{cart.product.product_image.url}}" class="cart-img" alt="{{product.title}}">
+        </div>
+        <div class="cart-item-details">
+     
+          <p class="cart-p-title">
+            {{cart.product.title}}
+          </p>
+          <p class="cart-p-des">
+            {{cart.product.description }}
+          </p>
+          <div class='cart-p-price'>
+            <p style="margin-bottom:0">{{cart.product.discount_price}}</p>
+            <p class="cross">{{cart.product.selling_price}}</p>
+          </div>
+          <p class='product-id'>
+            Product ID : {{cart.product.id}}
+          </p>
+          <p class="size">
+            {{cart.size}}
+          </p>
+          <div class="item-row2">
+            <div class="c-btns a s-btn">
+              <button class="minus-cart i-btn"  pid="{{cart.product.id}}">
+                -
+              </button>
+              <spam class="result-no" id="quantity">{{cart.quantity}}</spam>
+              <button class="plus-cart i-btn"  pid="{{cart.product.id}}">+</button>
+            </div>
+            <div class="a">
+
+              <button class="remove-cart" onclick="location.href='/cart' " pid="{{cart.product.id}}">
+              Remove
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="total-amount">
+    <div class="amount-details">
+      <div class="c-a">
+        <p class="c-heads ts">amount</p>
+        <p class="c-heads c-h-light ts" id="amount">{{amount}}</p>
+      </div>
+      <div class="c-a">
+        <p class="c-heads ts">Shipping amount</p>
+        <p class="c-heads c-h-light ts">70/-</p>
+      </div>
+      <div class="c-a">
+        <p class="c-heads">totalamount</p>
+        <p class="c-heads c-h-light" id="totalamount">{{totalamount}}</p>
+      </div>
+      <div class="c-a">
+        <a class="c-nav-link cl" href="{% url 'checkout' %}">checkout</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock main-content %}

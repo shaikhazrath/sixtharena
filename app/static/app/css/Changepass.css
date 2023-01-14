@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Poppins:wght@600&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.changepass-cont{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #e7e1e1;
+    background-size: cover;
+    position: relative;
+}
+
+.changepass-cont::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.p-title{
+    font-size: 25px;
+    font-family: 'Poppins';
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    color: rgb(0, 0, 0);
+    z-index: 2;
+}
+
+form{
+    z-index: 2;
+    width: max-content;
+    height: max-content;
+    padding: 30px 50px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DM Sans';
+    box-shadow:0 0 10px lightgrey ;
+}
+form label{
+    margin: 10px 0;
+    font-family: 'DM Sans';
+}
+
+.more{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: rgb(39, 38, 38);
+}
+
+.more .more-bt{
+    color: rgb(39, 38, 38);
+
+}
+
+.submit{
+    width: 120px;
+    height: max-content;
+    border: none;
+    outline: none;
+    background: #2a7583;
+    color: white;
+    margin: 15px 0;
+    border-radius: 4px;
+    padding: 7px;
+    font-family: 'DM Sans';
+}
+
+.container{
+    width: 100%;
+    height:100vh;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .text{
+    font-family: 'Poppins';
+    font-size: 30px;
+}
+
+.h-bt{
+    text-decoration: none;
+    color: white;
+    width: 120px;
+    height: 40px;
+    background: rgb(0, 157, 255);
+    margin: 20px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    border-radius: 50px;
+}
+
+@media only screen and (max-width: 450px) {
+    .container .text{
+        font-size: 19px;
+        text-align: center;
+    }
+}

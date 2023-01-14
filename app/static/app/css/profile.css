@@ -1,0 +1,199 @@
+.profile-cont{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+}
+.profile-cont .profile-form{
+    padding-top: 50px;
+    padding-bottom: 30px;
+    min-height: 100vh;
+    max-height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: #ffffff;
+}
+.profile-cont .profile-form .profile-img-cont{
+    width: 80px;
+    height: 80px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    border-radius: 50%;
+}
+
+.username{
+    font-family: "Poppins";
+    font-size: 14px ;
+    margin: 0 0 15px 0;
+}
+
+.profile-cont .profile-form .profile-img-cont .profile-img{
+    width: 80px;
+    height: 80px;
+    border-radius:50%;
+    object-fit: cover;
+}
+.profile-cont .profile-form .p-title{
+    font-family: "Poppins";
+    font-size: 16px;
+    color: white;
+}
+.profile-cont .profile-form form label{
+    font-family: "Poppins";
+    font-size: 15px;
+    color: black;
+}
+.profile-cont .profile-form form .profile-btn{
+    width: 100%;
+    height: 40px;
+    font-family: "DM Sans";
+    border: none;
+    margin: 10px 0;
+    background: #004257;
+
+    color: rgb(255, 255, 255);
+    text-transform: capitalize;
+    border-radius: 5px;
+    /* border: 2px solid rgb(255, 255, 255); */
+}
+
+.msg-cont{
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.911);
+    top: 0;
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.ico-ti{
+    font-size: 100px;
+    margin: 15px;
+    color: rgb(28, 172, 255);
+}
+
+.message-text{
+    width: max-content;
+    height: max-content;
+    padding: 20px 40px;
+    font-family: "Poppins";
+    border-radius: 5px;
+    z-index: 3;
+    font-size: 14px;
+    background: rgba(43, 154, 228, 0.671);
+    border: 2px solid rgb(185, 210, 255);
+}
+.profile-cont .profile-form form input{
+    width: 100%;
+    margin: 15px 0;
+    font-family: "Poppins";
+    font-size: 12px;
+    margin-right: 40px;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+}
+
+.profile-cont .profile-form form select{
+    border: none;
+    outline: none;
+    border: 2px solid black;
+    height: 40px;
+    margin: 10px 0;
+    background: transparent;
+    appearance: none;
+    -moz-appearance: none;
+}
+.drop-inp::-ms-expand {
+    display: none;  
+}
+
+
+.profile-cont .card-cont{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 50px;
+
+}
+.profile-cont .card-cont .card{
+    margin: 20px;
+    height: min-content;
+    padding: 15px ;
+    /* border-radius: 10px; */
+    color: black;
+    border: 2px solid black;
+}
+.profile-cont .card-cont .card .list-group form{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.profile-cont .card-cont .card .list-group form .list-group-item{
+    border: none;
+    height: min-content;
+    padding: 10px 0;
+    color: black;
+    margin: 5px 0;
+    text-transform: capitalize;
+    font-family: "DM Sans";
+}
+.btn-danger{
+    border: none;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'DM Sans';
+    background-color: rgb(187, 0, 0);
+}
+
+.logout{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.logout .logout-btn{
+    border: 1px;
+    border-radius: 5px;
+    width: max-content;
+    height: 40px;
+    background: #004257;
+    color: white;
+    font-family: 'DM Sans';
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 20px;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 893px) {
+    .profile-cont{
+        flex-direction: column;
+    }
+    .profile-cont .card-cont{
+        grid-template-columns: none;
+        grid-template-rows: 1fr ;
+        height: max-content;
+    }
+
+.logout{
+    position: relative;
+}
+}

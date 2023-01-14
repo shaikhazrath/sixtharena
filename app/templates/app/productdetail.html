@@ -1,0 +1,92 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'app/css/productdetail.css' %}">{% endblock css %}
+{% block title %}Home{% endblock title %}
+{% block main-content %}
+<div class="card Pcard ">
+  <div class="row">
+    <div class="col">
+      <div class="more-img-sec" id='sec-sc'>
+        <img src="{{product.product_img.url}}" onclick="changeImage(this)" class="img-s skeleton"
+          alt="{{product.title}}">
+        <img src="{{product.product_imag.url}}" onclick="changeImage(this)" class="img-s skeleton"
+          alt="{{product.title}}">
+        <img src="{{product.product_image.url}}" onclick="changeImage(this)" class="img-s skeleton"
+          alt="{{product.title}}">
+        <img src="{{product.product_images.url}}" onclick="changeImage(this)" class="img-s skeleton"
+          alt="{{product.title}}">
+      </div>
+      <img src="{{product.product_image.url}}" class="img-fluid rounded-start skeleton" id='main'
+        alt="{{product.title}}">
+    </div>
+    <div class="col-md-8">
+      <div class="Pcard-body">
+        <h5 class="Pcard-title">{{product.title}}</h5>
+        <p class=" description">{{product.description}}</p>
+        <p class="Pcard-price">₹ {{product.discount_price}}
+          <span class="discount"> {{product.selling_price }}</span>
+        </p>
+
+
+
+        {% if  request.user.is_authenticated %}
+        
+        {% if item_already_in_cart %}
+        <div class="btns">
+          <a href="{% url 'showcart' %}" class="dbtn go-cart-btn">go to cart</a>
+        </div>
+        {% else %}
+        <form action="/add-to-cart/" class="d-form">
+
+          <label for="size.id" style="margin-bottom: 10px;font-family: 'DM Sans'; font-size: 13px;
+            color: rgb(116, 113, 113);">Choose a Size:</label>
+          <div class=" btn-cont">
+            <input type="hidden" name="prod.id" value={{product.id}} id="prob.id">
+
+            <select class="drop-inp" id="size.id_shirt" name="size.id">
+              <option value="small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+
+            </select>
+
+        
+            <select class="drop-inp" id="size.id_shoes" name="size.id">
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+
+
+            </select>
+            <button class="dbtn dbtn-A ml" type="submit">Add to cart</button>
+
+          </div>
+        </form>
+        <script type="text/javascript">
+      const cat = "{{product.category}}"
+      if (cat == "SH" ){
+      document.getElementById("size.id_shirt").style.display = "none";
+      }
+      if (cat == "TW"){
+      document.getElementById("size.id_shoes").style.display = "none";
+      }
+      if (cat == "W"){
+      document.getElementById("size.id_shoes").style.display = "none";
+      document.getElementById("size.id_shirt").style.display = "none";
+
+
+      }
+          
+      </script>
+
+        {% endif %}
+        {% else %}
+        <button class="dbtn dbtn-A ml" onclick="location.href='/accounts/login/' ">login</button>
+
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main-content %}

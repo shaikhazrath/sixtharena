@@ -1,0 +1,1 @@
+web: gunicorn sixtharena.wsgi --log-file -

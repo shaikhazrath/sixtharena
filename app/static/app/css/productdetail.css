@@ -1,0 +1,310 @@
+.Pcard{
+    width: 100%;
+    min-height: 95vh;
+    max-height: 100%;
+    padding: 60px 0;
+}
+.Pcard .row{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns:50% 50% ;
+    justify-content: center;
+    align-items: flex-start;
+}
+.Pcard .row .col{
+    width:100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    /* background:grey; */
+}
+
+.more-img-sec{
+    width: max-content;
+    height: 450px;
+    overflow: scroll;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.sc-btn-cont{
+    width: 100%;
+    height: max-content;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+.sc-btn-cont .sc-btn{
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid black;
+    color: black;
+    position: absolute;
+    z-index: 2;
+    bottom:40px;
+}
+
+.more-img-sec::-webkit-scrollbar {
+    display: none;
+}
+
+.active-s{
+    border: 1px solid black;
+    padding: 3px;
+    height: max-content;
+    border-radius: 3px;
+}
+
+.more-img-sec .img-s{
+    width: 100px;
+    height: max-content;
+    object-fit: contain;
+    margin: 15px ;
+    cursor: pointer;
+}
+
+.Pcard .row .col .img-fluid{
+    width: 350px;
+    height: auto;
+    object-fit: cover;
+    margin:0 10px;
+}
+.Pcard .row .col-md-8{
+    width: 100%;
+    padding: 20px;
+    margin: 10px;
+}
+.Pcard-body{
+    width: 100%;
+}
+.Pcard-title{
+    font-family: "Roboto Condensed";
+    text-transform: uppercase;     
+    letter-spacing: 2px;
+    font-size: 26px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid lightgrey;
+}
+.description{
+    width: 85%;
+    font-family: "DM Sans";
+    font-size: 13px;
+    color: rgb(116, 113, 113);
+}
+.Pcard-price{
+    font-family: 'DM Sans';
+    font-size: 23px;
+}
+.Pcard-text{
+    font-family: 'DM Sans';
+    font-size: 14px;
+    color: rgb(141, 138, 138);
+    margin-bottom: 10px;
+}
+.Pcard-price .discount{
+    color: rgb(141, 138, 138) ;
+    margin-left: 6px;
+    font-size: 15px;
+    position: relative;
+}
+.Pcard-price .discount::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 2px;
+    width: 110%;
+    background: rgb(230, 12, 12);
+    transform:translate(-50%, -50%) rotate(-10deg);
+}
+.btns{
+    margin-top: 25px;
+}
+.dbtn{
+    width: 140px;
+    padding: 10px 20px;
+    background: transparent;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans";
+    font-size: 13px;
+    height: 45px;
+    color: black;
+    border: 2px solid black;
+}
+
+.ml{
+    margin-left: 20px;
+}
+
+.go-cart-btn{
+    width: max-content;
+    border:2px solid rgb(0, 0, 0);
+    color: black;
+}
+.buy-now-btn{
+    height: 45px;
+    border:2px solid rgb(0, 0, 0);
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.d-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.btn-cont{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.drop-inp{
+    border: none;
+    outline: none;
+    font-family: "DM Sans";
+    font-size: 13px;
+    height: 40px;
+    width: fit-content;
+    color: black;
+    border: 2px solid black;
+    background: transparent;
+    padding: 10px;
+    appearance: none;
+    -moz-appearance: none;
+}
+.drop-inp::-ms-expand {
+    display: none;  
+}
+
+.select{
+    display: flex;
+    align-items: baseline;
+}
+
+.counter{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+    margin: 0 15px;
+    border: 2px solid black;
+}
+
+.c-m{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.t-b{
+    color: black;
+}
+
+.value{
+    width: 30px;
+    height:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    font-size: 18px;
+    color: black;
+    margin-bottom: 0;
+}
+
+
+.indc{
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-family: 'Poppins';
+    background: white;
+    color: rgb(8, 8, 8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0rem;
+    user-select: none;
+}
+
+.indc:hover, .dbtn:hover, .drop-inp:hover{
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:893px){
+    .Pcard{
+        padding:0;
+    }
+    .Pcard .row {
+        grid-template-rows: 39% 50%;
+        grid-template-columns: none;
+    }
+    .Pcard .row .col-md-8 {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .Pcard-body {
+        width: 80%;
+    }
+    .Pcard .row .col .img-fluid {
+        width: 248px;
+    }
+    .more-img-sec .img-s {
+        width: 115px;
+        height: 115px;
+        object-fit: cover;
+        margin: 15px;
+        cursor: pointer;
+    }
+    .Pcard .row .col {
+        height: max-content;
+        flex-direction: column-reverse;
+    }
+    .more-img-sec {
+        width: 290px;
+        height: max-content;
+        overflow: scroll;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .Pcard .row {
+        grid-template-rows:none;
+        grid-template-columns: none;
+    }
+}

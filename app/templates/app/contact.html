@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Contact us{% endblock title %}
+{% block main-content %}
+<div class="auth-container">
+  <p class="auth-title">~ Contact us ~</p>
+  <form action=" " id="form" style="display: flex; flex-direction: column;" method="post">
+    {% csrf_token %}
+    {% for fm in form %}
+    {{fm.label_tag}}
+    {{fm}}
+    <p id="msg">
+      {{fm.errors | striptags}}
+    </p>
+    {% endfor %}
+    <button class="auth-btn" id='c-btn' type='submit'>submit</button>
+  </form>
+</div>
+{% endblock main-content %}
