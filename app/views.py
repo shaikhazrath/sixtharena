@@ -46,6 +46,9 @@ def add_to_cart(request):
  user = request.user
  product_id = request.GET.get('prod.id')
  size_id = request.GET.get('size.id')
+ if size_id == None:
+  size_id = "watch"
+ print(size_id)
  product = Product.objects.get(id=product_id)
  Cart(user=user, product=product, Size=size_id).save()
  return redirect('/cart/')
