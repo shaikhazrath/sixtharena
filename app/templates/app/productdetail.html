@@ -77,6 +77,27 @@
 
           </div>
         </form>
+        <form action="/add-to-cart/" class="d-form">
+
+          <label for="size.id" style="margin-bottom: 10px;font-family: 'DM Sans'; font-size: 13px;
+            color: rgb(116, 113, 113);">Choose a Size:</label>
+          <div class=" btn-cont">
+            <input type="hidden" name="prod.id" value={{product.id}} id="prob.id">
+
+
+        
+            <select class="drop-inp"  name="size.id">
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+
+
+            </select>
+            <button class="dbtn dbtn-A ml" type="submit">Add to cart</button>
+
+          </div>
+        </form>
         <script type="text/javascript">
       const cat = "{{product.category}}"
       if (cat == "SH" ){
