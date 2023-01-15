@@ -36,14 +36,14 @@
           <a href="{% url 'showcart' %}" class="dbtn go-cart-btn">go to cart</a>
         </div>
         {% else %}
-        <form action="/add-to-cart/" class="d-form">
+        <form action="/add-to-cart/" class="d-form" id="size.id_shirt" >
 
           <label for="size.id" style="margin-bottom: 10px;font-family: 'DM Sans'; font-size: 13px;
             color: rgb(116, 113, 113);">Choose a Size:</label>
           <div class=" btn-cont">
             <input type="hidden" name="prod.id" value={{product.id}} id="prob.id">
 
-            <select class="drop-inp" id="size.id_shirt" name="size.id">
+            <select class="drop-inp" name="size.id">
               <option value="small">Small</option>
               <option value="Medium">Medium</option>
               <option value="Large">Large</option>
@@ -51,7 +51,21 @@
             </select>
 
         
-            <select class="drop-inp" id="size.id_shoes" name="size.id">
+         
+            <button class="dbtn dbtn-A ml" type="submit">Add to cart</button>
+
+          </div>
+        </form>
+        <form action="/add-to-cart/" class="d-form" id="size.id_shoes">
+
+          <label for="size.id" style="margin-bottom: 10px;font-family: 'DM Sans'; font-size: 13px;
+            color: rgb(116, 113, 113);">Choose a Size:</label>
+          <div class=" btn-cont">
+            <input type="hidden" name="prod.id" value={{product.id}} id="prob.id">
+
+
+        
+            <select class="drop-inp"  name="size.id">
               <option value="7">7</option>
               <option value="8">8</option>
               <option value="9">9</option>

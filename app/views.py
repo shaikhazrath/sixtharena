@@ -218,7 +218,6 @@ def checkout(request):
         
                      amount += tempamount
                totalamount = amount+shipping_amount
-               print(totalamount)
                
          return render(request, 'app/checkout.html', {'add': add, 'totalamount': totalamount, 'cart_items': cart_items})
       return redirect("/profile/")
@@ -263,7 +262,9 @@ def payment_done(request):
   customer = Customer.objects.get(id=custid)
   cart = Cart.objects.filter(user=user)
   for c in cart:
-    OrderPlaced(user=user,customer=customer, product=c.product, quantity=c.quantity).save()
+    print(c.Size)
+
+    OrderPlaced(user=user,customer=customer, product=c.product,Size=c.Size,quantity=c.quantity).save()
     c.delete()
   return redirect("/orders/")
 

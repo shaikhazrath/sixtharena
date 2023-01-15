@@ -72,6 +72,7 @@ STATUS_CHOICES = {
 	
 class OrderPlaced(models.Model):
 	user = models.ForeignKey(User, on_delete= models.CASCADE)
+	Size = models.CharField(max_length=200)
 	customer = models.ForeignKey(Customer, on_delete= models.CASCADE)
 	product = models.ForeignKey(Product, on_delete= models.CASCADE)
 	quantity = models.PositiveIntegerField(default=1)
